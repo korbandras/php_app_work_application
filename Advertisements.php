@@ -1,13 +1,12 @@
 <?php
-
+require "Users.php";
 class Advertisements extends Users{
-    private $id;
-    private $title;
+    private int $id;
+    private string $title;
 
-    public function _construct($id, $userid, $title)
-    {
-        $this->id = $id;
+    public function addNewAdv($id, $userid, $title){
         $this->userID = $userid;
+        $this->id = $id;
         $this->title = $title;
     }
 
@@ -41,5 +40,10 @@ class Advertisements extends Users{
     public function getTitle()
     {
         return $this->title;
+    }
+
+    public function getAll():string
+    {
+        return "Id: " . $this->id . " UserID: " . $this->userID . " Name: " . $this->username . " Title: " . $this->title;
     }
 }

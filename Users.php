@@ -1,31 +1,12 @@
 <?php
-class Users{
+class Users
+{
     private $userID;
     private $userName;
 
-    /**
-     * @param $id
-     * @param $name
-     */
-    public function construct($id, $name){
+    public function addNew($id,$username){
         $this->userID = $id;
-        $this->userName = $name;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getUserID()
-    {
-        return $this->userID;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getUserName()
-    {
-        return $this->userName;
+        $this->userName = $username;
     }
 
     /**
@@ -37,10 +18,26 @@ class Users{
     }
 
     /**
+     * @return mixed
+     */
+    public function getUserID():int
+    {
+        return $this->userID;
+    }
+
+    /**
      * @param mixed $userName
      */
     public function setUserName($userName)
     {
         $this->userName = $userName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUserName():string
+    {
+        return $this->userName;
     }
 }
