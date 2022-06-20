@@ -1,37 +1,46 @@
 <?php
 class Users{
-    private $id;
-    private $title;
+    private $userID;
+    private $userName;
 
     /**
-     * @return mixed
+     * @param $id
+     * @param $name
      */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
+    public function construct($id, $name){
+        $this->userID = $id;
+        $this->userName = $name;
     }
 
     /**
      * @return mixed
      */
-    public function getTitle()
+    public function getUserID()
     {
-        return $this->title;
+        return $this->userID;
     }
 
     /**
-     * @param mixed $title
+     * @return mixed
      */
-    public function setTitle($title)
+    public function getUserName()
     {
-        $this->title = $title;
+        return $this->userName;
+    }
+
+    /**
+     * @param mixed $userID
+     */
+    public function setUserID($userID)
+    {
+        $this->userID = $userID;
+    }
+
+    /**
+     * @param mixed $userName
+     */
+    public function setUserName($userName)
+    {
+        $this->userName = $userName;
     }
 }
