@@ -1,7 +1,7 @@
 <?php
 require "Advertisements.php";
 class DataBase{
-    private $hostName = "localhost";
+    private $hostName = "localhost:3308";
     private $userName = "username";
     private $password = "password";
     private $dbName = "DataBase";
@@ -52,6 +52,14 @@ class DataBase{
         $this->password = $password;
     }
 
+    public function check2(){
+        if (!function_exists('mysqli_init') && !extension_loaded('mysqli')) {
+            echo 'We don\'t have mysqli!!!';
+        } else {
+            echo 'Phew we have it!';
+        }
+    }
+
     public function installcheck():string{
         if(function_exists('mysqli_connect')){
             return "Mysqli is installed <br>";
@@ -62,7 +70,7 @@ class DataBase{
     }
 
     public function createUserTable():string{
-        $connect = mysqli_connect($this->getHostName(), $this->getUserName(), $this->getPassword(), $this->getDbName(), $this->getPort());
+        $connect = new mysqli($this->getHostName(), $this->getUserName(), $this->getPassword(), $this->getDbName(), $this->getPort());
 
         try{
             $sql = "CREATE TABLE Users 

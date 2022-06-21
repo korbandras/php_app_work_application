@@ -79,6 +79,23 @@
         //check
         $view_variable .= readDataBase();
     ?>
+    <header class = "header">
+        <div class = "left">
+            <img class = "Hamburger_menu" src = "hamburger-menu-bar-icon-flat-black-round-button-vector-illustration-design-isolated-142986835.jpg">
+        </div>
+        <div class = "middle">
+            <button class = "minus">
+                <img class = "Minus" src = "minus.png">
+                <div class = "ToolTip">Remove Data</div>
+            </button>
+            <input class = "Search" type = "text" placeholder = "Name">
+            <button class = "plus">
+                <img class = "Plus" src = "plus.png">
+                <div class = "ToolTip">Add New Data</div>
+            </button>
+        </div>
+        <div class = "right"></div>
+    </header>
     <?= consolelog($view_variable); ?>
     </body>
 </html>

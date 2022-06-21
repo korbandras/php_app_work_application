@@ -1,0 +1,22 @@
+p{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+button{
+    cursor: pointer;
+    background-color: dimgray;
+    box-shadow: 0 5px 0 #696980;
+}
+button:active{
+    box-shadow: none;
+    transform: translateY(5px);
+}
+img{
+    cursor: pointer;
+}
+body{
+    font-family: "Times New Roman";
+    margin: 0;
+    padding: 50px;
+    background-color: white;
+}
