@@ -34,15 +34,8 @@
     justify-content: center;
     flex-shrink: 0;
 }
-.Hamburger_menu{
-    height: 60%;
-    margin: auto;
-    border: 0.5px solid black;
-    padding-left: 0;
-    padding-right: 15px;
-}
 .Advertisement{
-    border: 0.5px solid black;
+    border: 1px solid black;
     margin: auto;
     height: 60%;
     padding-right: 0;
@@ -55,12 +48,12 @@
 
     font-max-size: 100%;
     font-size: 100%;
-    border: 0.5px solid black;
+    border: 1px solid black;
     border-radius: 1.5px;
     width: 150px;
 }
 .Minus{
-    position: marker;
+    position: absolute;
     height: 50%;
     width: 10%;
     border-width: thin;
@@ -68,9 +61,10 @@
     border-color: black;
     margin-left: 0px;
     margin-right: 10px;
+    cursor: pointer;
 }
 .Plus{
-    position: marker;
+    position: absolute;
     width: 10%;
     height: 50%;
     border-width: thin;
@@ -78,8 +72,17 @@
     border-color: black;
     margin-right: 0px;
     margin-left: 10px;
+    cursor: pointer;
 }
-.Search.ToolTip, .Minus.ToolTip, .Plus.ToolTip{
+.Pic{
+    border-color: black;
+    border-width: thin;
+    border-style: solid;
+    position: absolute;
+    width: 10%;
+    height: 50%;
+}
+.Search.ToolTip, .Pic.ToolTip{
     position: center;
     background-color: #696980;
     color: white;

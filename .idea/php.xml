@@ -2,15 +2,15 @@
 <project version="4">
   <component name="PhpInterpreters">
     <interpreters>
-      <interpreter id="27f5e7cb-fb53-47f7-917a-c5638b15338f" name="PHP_1" home="D:\php\php.exe" debugger_id="php.debugger.XDebug" />
+      <interpreter id="27f5e7cb-fb53-47f7-917a-c5638b15338f" name="PHP_1" home="C:\php\php.exe" debugger_id="php.debugger.XDebug" />
     </interpreters>
   </component>
   <component name="PhpInterpretersPhpInfoCache">
     <phpInfoCache>
       <interpreter name="PHP_1">
-        <phpinfo binary_type="PHP" php_cgi="D:\php\php-cgi.exe" php_cli="D:\php\php.exe" path_separator=";" version="8.1.7">
+        <phpinfo binary_type="PHP" php_cgi="C:\php\php-cgi.exe" php_cli="C:\php\php.exe" path_separator=";" version="8.1.7">
           <additional_php_ini />
-          <configuration_file>D:\php\php.ini</configuration_file>
+          <configuration_file>C:\php\php.ini</configuration_file>
           <configuration_options>
             <configuration_option name="include_path" value=".;C:\php\pear" />
           </configuration_options>
@@ -32,6 +32,7 @@
             <extension name="iconv" />
             <extension name="json" />
             <extension name="libxml" />
+            <extension name="mysqli" />
             <extension name="mysqlnd" />
             <extension name="pcre" />
             <extension name="readline" />

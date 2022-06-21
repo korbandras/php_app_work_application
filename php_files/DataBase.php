@@ -1,10 +1,10 @@
 <?php
 require "Advertisements.php";
 class DataBase{
-    private $hostName = "localhost:3308";
-    private $userName = "username";
-    private $password = "password";
-    private $dbName = "DataBase";
+    private $hostName = "localhost";
+    private $userName = "root";
+    private $password = "MuRYS7GtmQ";
+    private $dbName = "database";
     private $port = 3308;
 
     public function getPort():int{
@@ -62,15 +62,15 @@ class DataBase{
 
     public function installcheck():string{
         if(function_exists('mysqli_connect')){
-            return "Mysqli is installed <br>";
+            return "mysqli is installed <br>";
         }
         else{
-            return "Enable Mysqli support in your PHO install<br>";
+            return "Enable mysqli support in your PHO install<br>";
         }
     }
 
     public function createUserTable():string{
-        $connect = new mysqli($this->getHostName(), $this->getUserName(), $this->getPassword(), $this->getDbName(), $this->getPort());
+        $conn = new mysqli($this->getHostName(), $this->getUserName(), $this->getPassword(), $this->getDbName(), $this->getPort());
 
         try{
             $sql = "CREATE TABLE Users 
@@ -78,7 +78,7 @@ class DataBase{
                 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                 username VARCHAR(30) NOT NULL
             )";
-            if($connect->query($sql) === true){
+            if($conn->query($sql) === true){
                 return "Users Table created successfully<br>";
             }
         }
@@ -86,7 +86,7 @@ class DataBase{
             return "Users Table is already created<br>";
         }
 
-        $connect->close();
+        $conn->close();
         return "";
     }
 
@@ -353,34 +353,36 @@ class DataBase{
 
     public function createUserPageTable(){
         echo '<table>';
+        $connect13 = new mysqli($this->getHostName(), $this->getUserName(), $this->getPassword(), $this->getDbName(), $this->getPort());
 
-        $num = mysqli_num_rows(mysqli_query("SELECT * FROM Users"));
+        if($connect13->connect_error){
+            die("Connection failed: " . $connect13->connect_error . "<br>");
+        }
+
+        $num = mysqli_num_rows(mysqli_query($connect13, "SELECT * FROM Users"));
         for($i = 0; $i < $num; $i++){
-            $row = mysqli_fetch_array(mysqli_query("SELECT * FROM Users"));
+            $row = mysqli_fetch_array(mysqli_query($connect13, "SELECT * FROM Users"));
             $userID = $row['userID'];
             $userName = $row['userName'];
         }
-        echo '<tr>';
-            echo "<td>" . $userID . "</td>";
-            echo "<td>" . $userName . "</td>";
-        echo '</tr>';
 
         echo '</table>';
     }
 
     public function createAdvertisementPageTable(){
         echo '<table>';
+        $connect14 = new mysqli($this->getHostName(), $this->getUserName(), $this->getPassword(), $this->getDbName(), $this->getPort());
 
-        $num = mysqli_num_rows(mysqli_query("SELECT * FROM Advertisement"));
+        if($connect14->connect_error){
+            die("Connection failed: " . $connect14->connect_error . "<br>");
+        }
+
+        $num = mysqli_num_rows(mysqli_query($connect14, "SELECT * FROM Advertisements"));
         for($i = 0; $i < $num; $i++){
-            $row = mysqli_fetch_array(mysqli_query("SELECT * FROM Advertisemenet"));
+            $row = mysqli_fetch_array(mysqli_query($connect14, "SELECT * FROM Advertisemenet"));
             $id = $row['id'];
             $title = $row['title'];
         }
-        echo '<tr>';
-            echo "<td>" . $id . "</td>";
-            echo "<td>" . $title . "</td>";
-        echo '</tr>';
 
         echo '</table>';
     }

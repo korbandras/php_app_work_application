@@ -87,18 +87,20 @@
             <div class = "middle">
                 <h2 class = "title">Advertisements</h2>
                 <button class = "minus">
-                    <img class = "Minus" src = "../images/minus.png">
+                    <img class = "Pic" src = "../images/iconmonstr-minus-circle-lined.svg">
                     <div class = "ToolTip">Remove Data</div>
                 </button>
                 <input class = "Search" type = "text" placeholder = "Name">
                 <button class = "plus">
-                    <img class = "Plus" src = "../images/plus.png">
+                    <img class = "Pic" src = "../images/iconmonstr-plus-circle-lined.svg">
                     <div class = "ToolTip">Add New Data</div>
                 </button>
             </div>
             <div class = "right">
-                <a href = "Users_page.php"><img class = "Advertisement" src = "../images/user.jfif"></a>
-                <div class = "ToolTip">Users</div>
+                <button>
+                    <img class = "Pic" src = "../images/iconmonstr-user-circle-thin.svg">
+                    <div class = "ToolTip">Users</div>
+                </button>
             </div>
         </header>
         <?= consolelog($view_variable); ?>
