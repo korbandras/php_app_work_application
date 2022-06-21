@@ -1,39 +1,39 @@
 <html>
     <head>
+        <link rel = "stylesheet" href = "../css_files/head.css">
+        <link rel = "stylesheet" href = "../css_files/basic.css">
         <title>Users Page</title>
     </head>
     <body>
         <header class = "header">
             <div class = "left">
-
+                <h2 class = "title">Users</h2>
             </div>
-            <div class = "middle">
-                <div><h2 class = "title">Users</h2>
+            <form class = "middle" name = "form" action="" method="post">
 
-                    <button class = "minus">
+                <div class = "minuss">
+                    <button class = "Minus">
                         <img class = "Pic" src = "../images/iconmonstr-minus-circle-lined.svg">
                         <div class = "ToolTip">Remove Data</div>
                     </button>
-
-                    <input class = "Search" type = "text" placeholder = "Name">
-
-
-                    <button class = "plus">
+                </div>
+                <div class = "search">
+                    <input class = "Searchh" type = "text" placeholder = "Name">
+                </div>
+                <div class = "pluss">
+                    <button class = "Plus">
                         <img class = "Pic" src = "../images/iconmonstr-plus-circle-lined.svg">
                         <div class = "ToolTip">Add New Data</div>
                     </button>
-
-
-                    <button>
-                        <img class = "Pic" src = "../images/iconmonstr-compass-12.svg">
-                        <div class = "ToolTip">Advertisements</div>
-                    </button>
                 </div>
 
-            </div>
-            <div class = "right">
-
-            </div>
+            </form>
+            <form class = "right">
+                <button class = "pluss">
+                    <img class = "Pic" src = "../images/iconmonstr-compass-12.svg">
+                    <div class = "ToolTip">Advertisements</div>
+                </button>
+            </form>
         </header>
         <table>
 

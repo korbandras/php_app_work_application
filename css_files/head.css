@@ -2,8 +2,8 @@
     height: 10%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    position: absolute;
+    justify-content: space-between;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -20,7 +20,6 @@
 }
 .right{
     width: 30%;
-    margin-right: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,7 +27,6 @@
 }
 .middle{
     width: 50%;
-    margin-right: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,8 +39,15 @@
     padding-right: 0;
     padding-left: 15px;
 }
-.Search{
-    height: 60%;
+.search{
+    height: 50%;
+    border: 1px solid black;
+    border-radius: 1.5px;
+    width: 150px;
+
+}
+.Searchh{
+    height: 100%;
     padding-left: 25px;
     padding-right: 25px;
 
@@ -50,37 +55,13 @@
     font-size: 100%;
     border: 1px solid black;
     border-radius: 1.5px;
-    width: 150px;
-}
-.Minus{
-    position: absolute;
-    height: 50%;
-    width: 10%;
-    border-width: thin;
-    border-style: solid;
-    border-color: black;
-    margin-left: 0px;
-    margin-right: 10px;
-    cursor: pointer;
-}
-.Plus{
-    position: absolute;
-    width: 10%;
-    height: 50%;
-    border-width: thin;
-    border-style: solid;
-    border-color: black;
-    margin-right: 0px;
-    margin-left: 10px;
-    cursor: pointer;
+    width: 100%;
 }
 .Pic{
-    border-color: black;
-    border-width: thin;
-    border-style: solid;
-    position: absolute;
-    width: 10%;
+    position: center;
+    width: 50%;
     height: 50%;
+
 }
 .Search.ToolTip, .Pic.ToolTip{
     position: center;
@@ -93,9 +74,38 @@
     white-space: nowrap;
     opacity: 0;
 }
-.Search:hover.ToolTip, .Minus:hover.ToolTip, .Plus:hover.ToolTip{
+.Search:hover.ToolTip, .Pic:hover.ToolTip{
     opacity: 1;
 }
-.title{
-    padding-right: 10px;
+.minuss{
+    padding-right: 20px;
+    width: 20%;
+    height: 50%;
+}
+.pluss{
+    padding-left: 20px;
+    width: 20%;
+    height: 50%;
+}
+.Minus{
+    position: fixed;
+    height: 5%;
+    width: 10%;
+    border-width: thin;
+    border-style: solid;
+    border-color: black;
+    margin-left: 0px;
+    margin-right: 0px;
+    cursor: pointer;
+}
+.Plus{
+    position: fixed;
+    width: 10%;
+    height: 5%;
+    border-width: thin;
+    border-style: solid;
+    border-color: black;
+    margin-right: 0px;
+    margin-left: 0px;
+    cursor: pointer;
 }

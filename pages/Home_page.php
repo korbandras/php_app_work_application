@@ -1,5 +1,7 @@
 <html>
 <head>
+    <link rel = "stylesheet" href = "../css_files/head.css">
+    <link rel = "stylesheet" href = "../css_files/basic.css">
     <title>Advertisements Page</title>
 </head>
     <body>
