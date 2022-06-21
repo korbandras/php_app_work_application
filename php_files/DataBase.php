@@ -350,4 +350,38 @@ class DataBase{
         $connect12->close();
         return "";
     }
+
+    public function createUserPageTable(){
+        echo '<table>';
+
+        $num = mysqli_num_rows(mysqli_query("SELECT * FROM Users"));
+        for($i = 0; $i < $num; $i++){
+            $row = mysqli_fetch_array(mysqli_query("SELECT * FROM Users"));
+            $userID = $row['userID'];
+            $userName = $row['userName'];
+        }
+        echo '<tr>';
+            echo "<td>" . $userID . "</td>";
+            echo "<td>" . $userName . "</td>";
+        echo '</tr>';
+
+        echo '</table>';
+    }
+
+    public function createAdvertisementPageTable(){
+        echo '<table>';
+
+        $num = mysqli_num_rows(mysqli_query("SELECT * FROM Advertisement"));
+        for($i = 0; $i < $num; $i++){
+            $row = mysqli_fetch_array(mysqli_query("SELECT * FROM Advertisemenet"));
+            $id = $row['id'];
+            $title = $row['title'];
+        }
+        echo '<tr>';
+            echo "<td>" . $id . "</td>";
+            echo "<td>" . $title . "</td>";
+        echo '</tr>';
+
+        echo '</table>';
+    }
 }

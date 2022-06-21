@@ -66,27 +66,26 @@
 
         $view_variable = first();
         //add user and advert
-        $view_variable .= addNewUser(1, "Example John");
-        $view_variable .= addNewAdvert(1, 1, "title");
-        $view_variable .= readDataBase();
+        //$view_variable .= addNewUser(1, "Example John");
+        //$view_variable .= addNewAdvert(1, 1, "title");
+        //$view_variable .= readDataBase();
         //modify user and advert
-        $view_variable .= modifyUser(1, "Example John2");
-        $view_variable .= modifyAdvert(1, "Title1");
+        //$view_variable .= modifyUser(1, "Example John2");
+        //$view_variable .= modifyAdvert(1, "Title1");
         //delete
         $obj = new DataBase();
-        $view_variable .= $obj->deleteUsersByID(1);
-        $view_variable .= $obj->deleteAdvertisementByID(1);
+        //$view_variable .= $obj->deleteUsersByID(1);
+        //$view_variable .= $obj->deleteAdvertisementByID(1);
+        $obj->createAdvertisementPageTable();
         //check
         $view_variable .= readDataBase();
         ?>
         <header class = "header">
             <div class = "left">
-                <img class = "Hamburger_menu" src = "../images/hamburger-menu-bar-icon-flat-black-round-button-vector-illustration-design-isolated-142986835.jpg">
+
             </div>
             <div class = "middle">
-                <tr>
-                    <th class = "title">ADVERTISEMENTS</th>
-                </tr>
+                <h2 class = "title">Advertisements</h2>
                 <button class = "minus">
                     <img class = "Minus" src = "../images/minus.png">
                     <div class = "ToolTip">Remove Data</div>
