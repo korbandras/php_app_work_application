@@ -5,7 +5,7 @@ class DataBase{
     private $userName = "username";
     private $password = "password";
     private $dbName = "DataBase";
-    private $port = 3306;
+    private $port = 3308;
 
     public function getPort():int{
         return $this->port;

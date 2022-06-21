@@ -1,11 +1,13 @@
+<!--
 <html>
     <head>
         <title>Home Page</title>
     </head>
     <body>
+
     <?php
         include("console.php");
-        include ("DataBase.php");
+        include("DataBase.php");
         $i = 0;
         function first():string{
             $obj = new DataBase();
@@ -84,6 +86,9 @@
             <img class = "Hamburger_menu" src = "../images/hamburger-menu-bar-icon-flat-black-round-button-vector-illustration-design-isolated-142986835.jpg">
         </div>
         <div class = "middle">
+            <tr>
+                <td>USERS</td>
+            </tr>
             <button class = "minus">
                 <img class = "Minus" src = "../images/minus.png">
                 <div class = "ToolTip">Remove Data</div>
@@ -94,8 +99,12 @@
                 <div class = "ToolTip">Add New Data</div>
             </button>
         </div>
-        <div class = "right"></div>
+        <div class = "right">
+            <a href = ""><img class = "Advertisement" src = "../images/compass.png"></a>
+            <div class = "ToolTip">Advertisements</div>
+        </div>
     </header>
     <?= consolelog($view_variable); ?>
     </body>
 </html>
+-->

@@ -15,11 +15,11 @@
 }
 .left{
     display: flex;
-    width: 50%;
+    width: 30%;
     align-items: center;
 }
 .right{
-    width: 10%;
+    width: 30%;
     margin-right: 20px;
     display: flex;
     align-items: center;
@@ -37,6 +37,16 @@
 .Hamburger_menu{
     height: 60%;
     margin: auto;
+    border: 0.5px solid black;
+    padding-left: 0;
+    padding-right: 15px;
+}
+.Advertisement{
+    border: 0.5px solid black;
+    margin: auto;
+    height: 60%;
+    padding-right: 0;
+    padding-left: 15px;
 }
 .Search{
     height: 60%;
@@ -82,4 +92,7 @@
 }
 .Search:hover.ToolTip, .Minus:hover.ToolTip, .Plus:hover.ToolTip{
     opacity: 1;
+}
+.title{
+
 }
