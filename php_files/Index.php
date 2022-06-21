@@ -4,7 +4,7 @@
     </head>
     <body>
     <?php
-        include ("console.php");
+        include("console.php");
         include ("DataBase.php");
         $i = 0;
         function first():string{
@@ -81,16 +81,16 @@
     ?>
     <header class = "header">
         <div class = "left">
-            <img class = "Hamburger_menu" src = "hamburger-menu-bar-icon-flat-black-round-button-vector-illustration-design-isolated-142986835.jpg">
+            <img class = "Hamburger_menu" src = "../images/hamburger-menu-bar-icon-flat-black-round-button-vector-illustration-design-isolated-142986835.jpg">
         </div>
         <div class = "middle">
             <button class = "minus">
-                <img class = "Minus" src = "minus.png">
+                <img class = "Minus" src = "../images/minus.png">
                 <div class = "ToolTip">Remove Data</div>
             </button>
             <input class = "Search" type = "text" placeholder = "Name">
             <button class = "plus">
-                <img class = "Plus" src = "plus.png">
+                <img class = "Plus" src = "../images/plus.png">
                 <div class = "ToolTip">Add New Data</div>
             </button>
         </div>
