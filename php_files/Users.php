@@ -1,8 +1,8 @@
 <?php
 class Users
 {
-    private $userID;
-    private $userName;
+    protected $userID;
+    protected $userName;
 
     public function addNew($id,$username){
         $this->userID = $id;

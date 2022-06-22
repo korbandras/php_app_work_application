@@ -7,109 +7,57 @@
     <body>
         <header class = "header">
             <div class = "left">
-                <a href = "Users_page.php"><img class = "Advertisement" src = "../images/iconmonstr-user-circle-thin.svg"></a>
-                <div class = "ToolTip">Users</div>
+                <a class = "homeleft" href = "Users_page.php">Users</a>
             </div>
             <div class = "middle">
-                <h2 class = "title">Advertisements</h2>
-                <button class = "minus">
-                    <img class = "Pic" src = "../images/iconmonstr-minus-circle-lined.svg">
-                    <div class = "ToolTip">Remove Data</div>
-                </button>
-                <input class = "Search" type = "text" placeholder = "Name">
-                <button class = "plus">
-                    <img class = "Pic" src = "../images/iconmonstr-plus-circle-lined.svg">
-                    <div class = "ToolTip">Add New Data</div>
-                </button>
+                <h2>Created by Andras Korb</h2>
             </div>
             <div class = "right">
-                <a href = "Advertisements_page.php"><img class = "Pic" src = "../images/iconmonstr-compass-12.svg"></a>
-                <div class = "ToolTip">Advertisements</div>
+                <a class = "homeright" href = "Advertisements_page.php">Advertisements</a>
             </div>
         </header>
-        <table>
+        <table class = "hometablee">
+            <tr>
+                <td><h4>Requirements</h4></td>
+                <td><h4>Objective</h4></td>
+            </tr>
+            <tr>
+                <td class = "hometable">
+                    <ul>
+                        <li>The application should have 2 database tables: users (id, name) and
+                            advertisements (id, userid, title).</li>
+                        <li>As a user I'd like a page that shows the list of the users existing in
+                            the system.</li>
+                        <li>As a user I'd like a page that shows the list of the existing
+                        advertisements in the system (and the related user's name of course)</li>
+                        <li>They should be different pages</li>
+                        <li>So the system should contain 3 pages:</li>
+                        <ul>
+                        <li>-> index, with the links to the user list and the advertisement list</li>
+                        <li>-> user list</li>
+                        <li>-> advertisement list</li>
+                        <li>-> The whole system should have a minimalist design (css)</li>
+                        </ul>
+                    </ul>
+                </td>
+                <td class = "hometable">
+                    <p>So it's a 3 paged application, with a minimal design, and database access,
+                    which is URL mapped, and based on an MVC pattern. No framework or CMS
+                    allowed to use.
+                    <p>I need the source of the application, which I expect to be about 6-8 files.
+                    Here can be a difference of course.
+                    <p>Requirements regarding the implementation:</p>
+                    <ul>
+                        <li> Must be object oriented!</li>
+                        <li> Must have at least 1 layer under the Controller layer</li>
+                        <li> Model and service methods should be separated. Model here should be
+                        clear, used only for representation.</li>
+                        <li> Must have a nice, and well documented code</li>
+                        <li>A very simple css, in minimal style</li>
+                    </ul>
 
+                </td>
+            </tr>
         </table>
-        <?php
-            ini_set ( 'mysqli.default_socket' , '/tmp/mysql5.sock' );
-            include "../php_files/console.php";
-            include "../php_files/DataBase.php";
-            $i = 0;
-
-            function first():string{
-                $obj = new DataBase();
-                $result = "";
-                $result .= $obj->installcheck();
-                $result .= $obj->createUserTable();
-                $result .= $obj->createAdvTable();
-                return $result;
-            }
-
-            function addNewUser($userID, $userName):string{
-    $result = "";
-    $obj = new Advertisements();
-    $obj1 = new DataBase();
-    $result .= $obj->addNew($userID, $userName);
-    $result .= $obj1->writeInUsers($obj);
-    return $result;
-}
-
-            function addNewAdvert($id, $userID, $adv):string{
-    $result = "";
-    $obj = new Advertisements();
-    $obj1 = new DataBase();
-    $result .= $obj->addNewAdv($id, $userID, $adv);
-    $result .= $obj1->writeInAdvertisement($obj);
-    return $result;
-}
-
-            function readDataBase():string{
-    $result = "";
-    $obj = new DataBase();
-    $result .= $obj->getDataUsers();
-    $result .= $obj->getDataAdvertisement();
-    return $result;
-}
-
-            function deleteDataByID($id):string{
-    $result = "";
-    $obj = new DataBase();
-    $result .= $obj->deleteUsersByID($id);
-    $result .= $obj->deleteAdvertisementByID($id);
-    return $result;
-}
-
-            function modifyUser($id, $name):string{
-    $result = "";
-    $obj = new DataBase();
-    $result .= $obj->modifyUsersByUserID($id, $name);
-    return $result;
-}
-
-            function modifyAdvert($id, $adv):string{
-    $result = "";
-    $obj = new DataBase();
-    $result .= $obj->modifyAdvertisementsByUserID($id, $adv);
-    return $result;
-}
-
-            $view_variable = first();
-            //add user and advert
-            //$view_variable .= addNewUser(1, "Example John");
-            //$view_variable .= addNewAdvert(1, 1, "title");
-            //$view_variable .= readDataBase();
-            //modify user and advert
-            //$view_variable .= modifyUser(1, "Example John2");
-            //$view_variable .= modifyAdvert(1, "Title1");
-            //delete
-            $obj = new DataBase();
-            //$view_variable .= $obj->deleteUsersByID(1);
-            //$view_variable .= $obj->deleteAdvertisementByID(1);
-            $obj->createAdvertisementPageTable();
-            //check
-            $view_variable .= readDataBase();
-        ?>
-
-        <?= consolelog($view_variable); ?>
     </body>
 </html>

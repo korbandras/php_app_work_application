@@ -4,10 +4,16 @@ class Advertisements extends Users{
     private int $id;
     private string $title;
 
-    public function addNewAdv($id, $userid, $title){
-        $this->userID = $userid;
-        $this->id = $id;
-        $this->title = $title;
+    public function addNewAdv($id, $userid, $title):string{
+        if($userid != NULL){
+            $this->userID = $userid;
+            $this->id = $id;
+            $this->title = $title;
+        }
+        else{
+            return "Already created.\n";
+        }
+        return "";
     }
 
     /**

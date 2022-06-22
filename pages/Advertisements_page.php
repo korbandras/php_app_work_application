@@ -2,109 +2,54 @@
     <head>
         <link rel = "stylesheet" href = "../css_files/head.css">
         <link rel = "stylesheet" href = "../css_files/basic.css">
-        <title>Advertisements Page</title>
+        <title>Users Page</title>
     </head>
     <body>
+        <!-- Header of HTML, makes the *now without function* buttons,
+         but more importantly, the sets apart the main body *table* and the header part,
+         also includes links-->
+        <header class = "header">
+            <div class = "left">
+                <h2 class = "title">Advertisements</h2>
+            </div>
+            <form class = "middle" name = "form" action="" method="post">
+                <a href="Home_page.php">Home</a>
+            </form>
+            <form class = "right">
+                <button class = "advv">
+                    <!-- Link to other page -->
+                    <a href = "Users_page.php">Users</a>
+                </button>
+            </form>
+        </header>
+        <table>
+
+        </table>
         <?php
+        //Include the program's php files
         include "../php_files/console.php";
         include "../php_files/DataBase.php";
-        $i = 0;
+        //Object DataBase
+        $obj = new DataBase();
         function first():string{
-            $obj = new DataBase();
             $result = "";
+            $obj = new DataBase();
             $result .= $obj->installcheck();
             $result .= $obj->createUserTable();
-            $result .= $obj->createAdvTable();
-            return $result;
-        }
-
-        function addNewUser($userID, $userName):string{
-            $result = "";
-            $obj = new Advertisements();
-            $obj1 = new DataBase();
-            $result .= $obj->addNew($userID, $userName);
-            $result .= $obj1->writeInUsers($obj);
-            return $result;
-        }
-
-        function addNewAdvert($id, $userID, $adv):string{
-            $result = "";
-            $obj = new Advertisements();
-            $obj1 = new DataBase();
-            $result .= $obj->addNewAdv($id, $userID, $adv);
-            $result .= $obj1->writeInAdvertisement($obj);
-            return $result;
-        }
-
-        function readDataBase():string{
-            $result = "";
-            $obj = new DataBase();
-            $result .= $obj->getDataUsers();
-            $result .= $obj->getDataAdvertisement();
-            return $result;
-        }
-
-        function deleteDataByID($id):string{
-            $result = "";
-            $obj = new DataBase();
-            $result .= $obj->deleteUsersByID($id);
-            $result .= $obj->deleteAdvertisementByID($id);
-            return $result;
-        }
-
-        function modifyUser($id, $name):string{
-            $result = "";
-            $obj = new DataBase();
-            $result .= $obj->modifyUsersByUserID($id, $name);
-            return $result;
-        }
-
-        function modifyAdvert($id, $adv):string{
-            $result = "";
-            $obj = new DataBase();
-            $result .= $obj->modifyAdvertisementsByUserID($id, $adv);
+            //$result .= $obj->createAdvTable();
             return $result;
         }
 
         $view_variable = first();
-        //add user and advert
-        //$view_variable .= addNewUser(1, "Example John");
-        //$view_variable .= addNewAdvert(1, 1, "title");
-        //$view_variable .= readDataBase();
-        //modify user and advert
-        //$view_variable .= modifyUser(1, "Example John2");
-        //$view_variable .= modifyAdvert(1, "Title1");
-        //delete
-        $obj = new DataBase();
-        //$view_variable .= $obj->deleteUsersByID(1);
-        //$view_variable .= $obj->deleteAdvertisementByID(1);
-        $obj->createAdvertisementPageTable();
-        //check
-        $view_variable .= readDataBase();
+        //Add new user, hardcoded test user
+        $obh1 = new Advertisements();
+        $obh1->addNewAdv(3, 1,"Title");
+        //Write out to html page
+        $view_variable .= $obj->writeInAdvertisement($obh1);
+        $obj->advertisementPageTable();
+        $view_variable .= $obj->getDataAdvertisement();
         ?>
-        <header class = "header">
-            <div class = "left">
 
-            </div>
-            <div class = "middle">
-                <h2 class = "title">Advertisements</h2>
-                <button class = "minus">
-                    <img class = "Pic" src = "../images/iconmonstr-minus-circle-lined.svg">
-                    <div class = "ToolTip">Remove Data</div>
-                </button>
-                <input class = "Search" type = "text" placeholder = "Name">
-                <button class = "plus">
-                    <img class = "Pic" src = "../images/iconmonstr-plus-circle-lined.svg">
-                    <div class = "ToolTip">Add New Data</div>
-                </button>
-            </div>
-            <div class = "right">
-                <button>
-                    <img class = "Pic" src = "../images/iconmonstr-user-circle-thin.svg">
-                    <div class = "ToolTip">Users</div>
-                </button>
-            </div>
-        </header>
         <?= consolelog($view_variable); ?>
     </body>
 </html>

@@ -22,7 +22,14 @@ img{
 }
 body{
     font-family: "Times New Roman";
+    alig: center;
     margin: 0;
     padding: 50px;
     background-color: white;
+}
+table{
+    width: 80%;
+    margin-left: 2%;
+    margin-top: 3%;
+    text-align: center;
 }
