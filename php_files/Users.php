@@ -4,12 +4,19 @@ class Users
     protected $userID;
     protected $userName;
 
+    /**
+     * Add new User
+     * @param $id
+     * @param $username
+     * @return void
+     */
     public function addNew($id,$username){
         $this->userID = $id;
         $this->userName = $username;
     }
 
     /**
+     * Set User's ID, unique
      * @param mixed $userID
      */
     public function setUserID($userID)
@@ -18,6 +25,7 @@ class Users
     }
 
     /**
+     * Get User's ID
      * @return mixed
      */
     public function getUserID():int
@@ -26,6 +34,7 @@ class Users
     }
 
     /**
+     * Set User's name
      * @param mixed $userName
      */
     public function setUserName($userName)
@@ -34,6 +43,7 @@ class Users
     }
 
     /**
+     * Get User's name
      * @return mixed
      */
     public function getUserName():string

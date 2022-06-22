@@ -4,6 +4,13 @@ class Advertisements extends Users{
     private int $id;
     private string $title;
 
+    /**
+     * Add new Advertisement, checking if it has a NULL Id or not
+     * @param $id
+     * @param $userid
+     * @param $title
+     * @return string
+     */
     public function addNewAdv($id, $userid, $title):string{
         if($userid != NULL){
             $this->userID = $userid;
@@ -17,6 +24,7 @@ class Advertisements extends Users{
     }
 
     /**
+     * Set Advertisement's ID
      * @param mixed $id
      */
     public function setId($id)
@@ -25,6 +33,7 @@ class Advertisements extends Users{
     }
 
     /**
+     * Get Advertisement's ID
      * @return mixed
      */
     public function getId()
@@ -33,6 +42,7 @@ class Advertisements extends Users{
     }
 
     /**
+     * Set Advertisement's title
      * @param mixed $title
      */
     public function setTitle($title)
@@ -41,6 +51,7 @@ class Advertisements extends Users{
     }
 
     /**
+     * Get Advertisement's title
      * @return mixed
      */
     public function getTitle()
@@ -48,6 +59,10 @@ class Advertisements extends Users{
         return $this->title;
     }
 
+    /**
+     * Returns the whole user and advertisement section
+     * @return string
+     */
     public function getAll():string
     {
         return "Id: " . $this->id . " UserID: " . $this->userID . " Name: " . $this->username . " Title: " . $this->title;
